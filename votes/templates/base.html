@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+  <head>
+    <title>
+      Candidates |
+      {% block title %}
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'votes/materialize/css/materialize.min.css' %}">
+    {% block styles %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    {% endblock %}
+    <br />
+    {% block inbtn %}
+        <div class="row">
+            <div class="col m3">
+                <a href="{% url 'votes:index' %}" class="btn">Back to Index</a>
+            </div>
+        </div>
+    {% endblock %}
+    <script src="{% static 'votes/materialize/js/materialize.min.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

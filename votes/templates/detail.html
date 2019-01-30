@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ candidate.firstname }} {{ candidate.lastname }}{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col m8">
+            <h4>{{ candidate.firstname }} {{ candidate.lastname }}</h4>
+            <span>votes: {{ candidate.votes.all.count }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m8">
+            <h5>Platform:</h5>
+            <p>{{ candidate.platform }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m6">
+            <a href="{% url 'votes:update' candidate.id %}" class="btn">Update Candidate</a>
+            <a href="{% url 'votes:vote' candidate.id %}" class="btn">Vote Candidate</a>
+        </div>
+    </div>
+{% endblock %}

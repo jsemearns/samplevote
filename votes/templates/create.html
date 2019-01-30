@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Add new Candidate{% endblock %}
+{% block body %}
+<form action="{% url 'votes:create' %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col m4">
+            {{ form }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m4">
+            <input class="btn" type="submit" value="Add Candidate" />
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Create Position{% endblock %}
+{% block body %}
+<form action="{% url 'votes:pos_create' %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col m4">
+            {{ form }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m4">
+            <input class="btn" type="submit" value="Create Position" />
+        </div>
+    </div>
+</form>
+{% endblock %}
