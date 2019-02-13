@@ -10,6 +10,8 @@ urlpatterns = [
     path('candidate/update/<int:candidate_id>/', views.candidate_update,
         name='update'),
     path('position/create/', views.position_create, name='pos_create'),
-    path('candidate/<int:candidate_id>/vote', views.vote, name='vote')
-
+    path('candidate/<int:candidate_id>/vote', views.vote, name='vote'),
+    path('register/', views.registration, name='registration'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout')
 ]
